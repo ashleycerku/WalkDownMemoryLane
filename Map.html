@@ -32,61 +32,112 @@
 </head>
 
 <body>
-    <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#!">Walk Down Memory Lane</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                </ul>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">Walk Down Memory Lane</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="Contact.html">Home</a></li>
+                        <div class="nav-item dropdown">
+                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu m-0">
+                             <a href="The Project.html" class="dropdown-item">The Project</a>
+                             <a href="The Creator.html" class="dropdown-item">The Creator</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">AR Experience</a>
+                            <div class="dropdown-menu m-0">
+                             <a href="What is AR?.html" class="dropdown-item">What is AR?</a>
+                             <a href="Heritage Projects.html" class="dropdown-item">Heritage Projects</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Main Street Romeo, MI.</a>
+                            <div class="dropdown-menu m-0">
+                             <a href="Map.html" class="dropdown-item">Map</a>
+                             <a href="Locations.html" class="dropdown-item">Locations</a>
+                             <a href="Share Your Memories.html" class="dropdown-item">Share Your Memories</a>
+                            </div>
+                        </div>
+                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     <div id="map"></div>
     <div id="slider-container">
         <div id="time-slider"></div>
     </div>
     <script>
         // Initialize map centered in the USA
-        var map = L.map('map').setView([42.802524, -83.013439], 20);
+        var map = L.map('map').setView([42.80260603873673, -83.01341495806903], 17.4);
         var baseLayer = L.tileLayer('https://api.maptiler.com/maps/bright-v2/{z}/{x}/{y}.png?key=9ZlnxkRt2oS8TwA1JdFu', {
             attribution: '&copy; MapTiler &copy; OpenStreetMap contributors'
         });
 
         var iconOptions = {
-            iconUrl: "images/pin.png", // Updated to use your custom icon
-            iconSize: [55, 55]
+            iconUrl: "images/mappin.png", // Updated to use your custom icon
+            iconSize: [40, 40]
         };
         var customIcon = L.icon(iconOptions);
         var markerOptions = { icon: customIcon };
+        
 
         // Event locations with year NOT WORKING
 // locations with timestamps
 var markers = [
         {
-        position: [42.8035552, -83.016268],
+        position: [42.80357871998362, -83.01369405974091],
         popup: `
-        <b>Grays Block</b>
-        <br>Heading 2<br>
+        <b>Grays Opera House</b>
+        <br>Text<br>
         <p>Text</p>
-        <img src="header.jpg">
+        <img src="images/grays1.jpg" style="width: 150px">
         `,
         }
         ];
 
         markers.push({
-        position: [42.8035552, -83.016268],
+        position: [42.80274824454993, -83.01360877865822],
         popup: `
-        <b>Greenbow, Alabama (filmed at Bluff Plantation)</b>
-        <br>Elvis Presley Visits<br>
-        <p>As a single mother, Mrs. Gump made their home into a bed and breakfast for money. One such guest was Elvis Presley. In one scene, Forrest is dancing while Elvis is playing the guitar. Because Forrest is wearing leg braces, the dancing is jolted and odd, however Forrest and Mrs. Gump later see Elvis impersonating Forrest’s dancing while singing “Hound Dog” on television.</p>
-        <p>This scene is significant to connect Forrest’s story to America in the 1950s, especially to understanding cultural events like the emergence of rock and roll and icons like Elvis Presley.</p>
-        <img src="headr.jpg">
+        <b>General Bank</b>
+        <br>Text<br>
+        <p>Text</p>
+        <img src="images/NWcorner.jpg" style="width: 150px">
         `,
-        year: 1951
+        });
+        
+        markers.push({
+        position: [42.80248089734905, -83.01363978997139],
+        popup: `
+        <b>National Bank</b>
+        <br>Text<br>
+        <p>Text</p>
+        <img src="images/SWcorner.jpg" style="width: 150px">
+        `,
+        });
+
+        markers.push({
+        position: [42.80356734368129, -83.01326765439258],
+        popup: `
+        <b>Main Street</b>
+        <br>Text<br>
+        <p>Text</p>
+        <img src="images/street7.jpg" style="width: 150px">
+        `,
+        });
+
+        markers.push({
+        position: [42.80149113381764, -83.01361653148244],
+        popup: `
+        <b>Romeo Hotel</b>
+        <br>Text<br>
+        <p>Text</p>
+        <img src="images/hotel.jpg" style="width: 150px">
+        `,
         });
 
         var eventsLayer = L.layerGroup();
@@ -99,6 +150,10 @@ var markers = [
         baseLayer.addTo(map);
         eventsLayer.addTo(map);
     </script>
+        <!-- Footer-->
+        <footer class="py-5 bg-black">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Walk Down Memory Lane, 2025</p></div>
+        </footer>
 </body>
 
 </html>
