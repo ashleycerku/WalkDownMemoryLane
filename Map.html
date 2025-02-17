@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Walk Down Memory Lane</title>
+    <title>Map</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
@@ -72,7 +72,7 @@
         <div id="time-slider"></div>
     </div>
     <script>
-        // Initialize map centered in the USA
+       // Initialize map centered in the USA
         var map = L.map('map').setView([42.80260603873673, -83.01341495806903], 17.4);
         var baseLayer = L.tileLayer('https://api.maptiler.com/maps/bright-v2/{z}/{x}/{y}.png?key=9ZlnxkRt2oS8TwA1JdFu', {
             attribution: '&copy; MapTiler &copy; OpenStreetMap contributors'
@@ -85,6 +85,10 @@
         var customIcon = L.icon(iconOptions);
         var markerOptions = { icon: customIcon };
         
+        // Add the zoom control on the right side
+            L.control.zoom({
+             position: 'bottomright' // This will place the zoom controls on the top-right
+            }).addTo(map);
 
         // Event locations with year NOT WORKING
 // locations with timestamps
@@ -92,51 +96,62 @@ var markers = [
         {
         position: [42.80357871998362, -83.01369405974091],
         popup: `
-        <b>Grays Opera House</b>
-        <br>Text<br>
-        <p>Text</p>
-        <img src="images/grays1.jpg" style="width: 150px">
+        <b>Gray's Block</b>
+        <p>Built in 1869, the Gray's Block is is the only remaining Opera House in Michigan from this period. Learn about its history.</p>
+        <p><a href="Gray's Block.html">Learn More</a></p>
+        <img src="images/grays.jpg" style="width: 150px">
         `,
         }
         ];
 
+        
+        markers.push({
+        position: [42.80356734368129, -83.01326765439258],
+        popup: `
+        <b>Main Street Looking South</b>
+        <p>See how much Main Street has changed by clicking the link below.</p>
+        <p><a href="Main Street Looking South.html">Learn More</a></p>
+        <img src="images/streetsouth.png" style="width: 150px">
+        `,
+        });
+        
         markers.push({
         position: [42.80274824454993, -83.01360877865822],
         popup: `
-        <b>General Bank</b>
-        <br>Text<br>
-        <p>Text</p>
-        <img src="images/NWcorner.jpg" style="width: 150px">
+        <b>Citizens National Bank</b>
+        <p>From grocery store in the early 1900s to a community bank, to antique mall and now a coffee house, learn more about its diverse history.</p>
+        <p><a href="Citizens National Bank.html">Learn More</a></p>
+        <img src="images/citizensbank.jpg" style="width: 150px">
         `,
         });
         
         markers.push({
         position: [42.80248089734905, -83.01363978997139],
         popup: `
-        <b>National Bank</b>
-        <br>Text<br>
-        <p>Text</p>
-        <img src="images/SWcorner.jpg" style="width: 150px">
-        `,
-        });
-
-        markers.push({
-        position: [42.80356734368129, -83.01326765439258],
-        popup: `
-        <b>Main Street</b>
-        <br>Text<br>
-        <p>Text</p>
-        <img src="images/street7.jpg" style="width: 150px">
+        <b>Romeo Savings Bank</b>
+        <p>Built in 1863, this bank drew interest from the Dodge Brothers. Learn more about its evolution in Romeo.</p>
+        <p><a href="Romeo Savings Bank.html">Learn More</a></p>
+        <img src="images/savingsbank.jpg" style="width: 150px">
         `,
         });
 
         markers.push({
         position: [42.80149113381764, -83.01361653148244],
         popup: `
-        <b>Romeo Hotel</b>
-        <br>Text<br>
-        <p><a href= "https://ashleycerku.github.io/WalkDownMemoryLane/Locations.html">Learn More</a></p>
+        <b>American Hotel</b>
+        <p>Did you know there was a hotel on Main Street? Learn more about this location built in the early 1860s.</p>
+        <p><a href="American Hotel.html">Learn More</a></p>
         <img src="images/hotel.jpg" style="width: 150px">
+        `,
+        });
+
+        markers.push({
+        position: [42.801627, -83.013286],
+        popup: `
+        <b>Main Street Looking North</b>
+        <p>See how much Main Street has changed by clicking the link below.</p>
+        <p><a href="Main Street Looking North.html">Learn More</a></p>        
+        <img src="images/streetnorth.jpg" style="width: 150px">
         `,
         });
 
