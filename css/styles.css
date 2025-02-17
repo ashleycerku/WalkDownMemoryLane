@@ -11348,3 +11348,18 @@ background-size: cover;
   border-radius: 8px;  /* Optional: for rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  /* Optional: shadow for better contrast */
 }
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0; /* Align the caption to the bottom of the image */
+  left: 0;
+  width: 100%; /* Make sure the caption stretches the full width */
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with 60% opacity */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding around the text */
+}
+
+.carousel-caption h5, .carousel-caption p {
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center the text */
+}
