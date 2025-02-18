@@ -11367,3 +11367,15 @@ background-size: cover;
   margin: 0; /* Remove default margin */
   text-align: center; /* Center the text */
 }
+
+.button-container {
+  text-align: center; /* Center the buttons horizontally */
+  margin-top: 20px;   /* Optional: add top margin */
+}
+
+.btn {
+  font-size: 18px;
+  padding: 10px 10px 10px 10px;
+  margin: 0 10px;     /* Adds horizontal space between buttons */
+  display: inline-block;
+}
