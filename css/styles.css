@@ -11358,7 +11358,6 @@ background-size: cover;
   bottom: 0; /* Align the caption to the bottom of the image */
   left: 0;
   width: 100%; /* Make sure the caption stretches the full width */
-  background-color: rgba(0, 0, 0, 0.7); /* Black background with 60% opacity */
   color: white; /* White text color */
   padding: 10px 20px; /* Padding around the text */
 }
