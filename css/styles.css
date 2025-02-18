@@ -11344,10 +11344,14 @@ background-size: cover;
 .banner-background {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent black */
-  padding: 20px 40px;
-  border-radius: 8px;  /* Optional: for rounded corners */
+  padding: 40px 40px 40px 40px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center the text itself */
+  border-radius: 10px;  /* Optional: for rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  /* Optional: shadow for better contrast */
 }
+
 
 .carousel-caption {
   position: absolute;
