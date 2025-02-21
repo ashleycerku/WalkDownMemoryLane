@@ -71,7 +71,18 @@
     <div id="slider-container">
         <div id="time-slider"></div>
     </div>
-    <script>
+   <!-- Header - set the background image for the header in the line below-->
+<header class="py-5 bg-image-full" style="background-image: url('images/header2.jpg')">
+    <div class="text-center my-5">
+        <!-- Banner div added behind the header text -->
+        <div class="banner-background">
+            <h1 class="text-white fs-1 fw-bolder">Take a Walk Down Memory Lane</h1>
+            <h2 class="text-white fs-4 fw-bolder">An Immersive Community Experience</h2>
+        </div>
+    </div>
+</header>
+
+   <script>
        // Initialize map centered in the USA
         var map = L.map('map').setView([42.80260603873673, -83.01341495806903], 17.4);
         var baseLayer = L.tileLayer('https://api.maptiler.com/maps/bright-v2/{z}/{x}/{y}.png?key=9ZlnxkRt2oS8TwA1JdFu', {
@@ -155,11 +166,11 @@ var markers = [
         `,
         });
 
-        var eventsLayer = L.layerGroup();
-        markers.forEach(function(event) {
-            var marker = L.marker(event.position, markerOptions).bindPopup(event.popup);
-            marker.options.year = event.year; // Add custom year property
-            eventsLayer.addLayer(marker);
+        markersData.forEach(function(event) {
+            L.marker(event.position, { icon: customIcon })
+                .bindPopup(event.popup)  // Displays info on click
+                .bindTooltip(event.name, {permanent: true, direction: "top"}) // Always show location name
+                .addTo(eventsLayer);
         });
 
         baseLayer.addTo(map);
