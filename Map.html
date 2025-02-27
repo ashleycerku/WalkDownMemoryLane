@@ -166,11 +166,11 @@ var markers = [
         `,
         });
 
-        markersData.forEach(function(event) {
-            L.marker(event.position, { icon: customIcon })
-                .bindPopup(event.popup)  // Displays info on click
-                .bindTooltip(event.name, {permanent: true, direction: "top"}) // Always show location name
-                .addTo(eventsLayer);
+        var eventsLayer = L.layerGroup();
+        markers.forEach(function(event) {
+            var marker = L.marker(event.position, markerOptions).bindPopup(event.popup);
+            marker.options.year = event.year; // Add custom year property
+            eventsLayer.addLayer(marker);
         });
 
         baseLayer.addTo(map);
