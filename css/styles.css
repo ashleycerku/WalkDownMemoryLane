@@ -11378,3 +11378,15 @@ background-size: cover;
   margin: 0 10px;     /* Adds horizontal space between buttons */
   display: inline-block;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
