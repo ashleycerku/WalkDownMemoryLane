@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>AR Experience</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <script type="text/javascript">
+            let slideIndex = 1;
+            showSlides(slideIndex);
+      
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+      
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+      
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+      
+                if (n > slides.length) { slideIndex = 1; }
+                if (n < 1) { slideIndex = slides.length; }
+      
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+            </script>
+
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html">Walk Down Memory Lane</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <div class="nav-item dropdown">
+                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                            <div class="dropdown-menu m-0">
+                             <a href="The Project.html" class="dropdown-item">The Project</a>
+                             <a href="The Creator.html" class="dropdown-item">The Creator</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <li class="nav-item"><a class="nav-link" href="What is AR.html">What is Augmented Reality?</a></li>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Main Street Romeo, MI.</a>
+                            <div class="dropdown-menu m-0">
+                            <a href="Downtown.html" class="dropdown-item">Downtown History</a>
+                            <a href="AR Experience.html" class="dropdown-item">AR Experience</a>
+                            <a href="Map.html" class="dropdown-item">Map</a>
+                            <a href="Locations.html" class="dropdown-item">Memory Lane Locations</a>
+                             <a href="Share Your Memories.html" class="dropdown-item">Share Your Memories</a>
+                            </div>
+                        </div>
+                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+<!-- Header - set the background image for the header in the line below-->
+<header class="py-5 bg-image-full" style="background-image: url('images/header2.jpg')">
+<div class="text-center my-5">
+<!-- Banner div added behind the header text -->
+<div class="banner-background">
+    <h1 class="text-white fs-1 fw-bolder"><i>Memory Lane</i> AR Experience</h1>
+    <h2 class="text-white fs-4 fw-bolder">Romeo, Michigan</h2>
+</div>
+</div>
+</header>
+                <!-- Content section-->
+                <section class="py-3">
+                    <div class="container px-4 px-lg-5 my-5">
+                        <div class="row gx-4 gx-lg-5 align-items-center">
+                            <div class="col-md-6">
+                                <img class="card-img-top mb-5 mb-md-0" src="images/bio.jpg" alt="..."
+                                     style="width: 400px; height: 600px; margin-left: 100px;" /> <!-- Set width to 100% and height to auto -->
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="display-5 fw-bolder">Take a Walk Down <i>Memory Lane</i></h1>
+                                <div class="fs-5 mb-5">
+                                </div>
+                                <p class="lead">Dr. Ashley Cerku created <i>Memory Lane</i> as part of her dissertation project. She received a Ph.D. in Anthropology from Michigan State University in 2025, Master’s degree in Anthropology from Michigan State University in 2023, Master’s degree in Liberal Studies from Oakland University 2017, and Bachelor’s degree in English and Writing/Rhetoric from Oakland University in 2013. Her research focuses on historical photography, cultural heritage, community memory, and digital work. It specifically investigates the semiotic landscape of downtown main street and how digital technologies can provide a more immersive and inclusive approach to heritage preservation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+                <!-- Button Container -->
+                <div class="button-container" style="margin-bottom: 80px;">
+                    <a href="The Project.html" class="btn btn-primary">Visit the Map of Locations on Main Street</a>
+                </div>
+                
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+        <!-- Footer-->
+        <footer class="py-4 bg-black">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Walk Down Memory Lane, 2025</p></div>
+        </footer>
