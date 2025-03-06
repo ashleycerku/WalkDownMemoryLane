@@ -14,7 +14,11 @@
     <!-- Time Slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
-
+    <script>
+        $(document).ready(function(){
+            $("#myModal").modal('show');
+        });
+    </script>
     <style>
         #map {
             position: relative;
@@ -27,6 +31,30 @@
 </head>
 
 <body>
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Marco Gonzalez</h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <center><p><big>This is the map of all of the archaeological structures found thus far at Marco Gonzalez!
+                    </p>
+
+                    <p>Marco Gonzalez was almost destroyed and replaced with condomonium resorts, but became San Pedro's first official Archaeological Reserve on April 1, 2011, making it a protected area.</p>
+
+                    <p>As you go through the site, you can look at what artifacts were found at which structures during previous excavations.</p>
+
+                    <p>We work with several specialists (including ceramicists and lithics specialists) throughout the field season who can (and have) provided valuable information about where artifacts would have originated from. Where available, information about where the artifact came from will be included in the pop up.</p>
+    
+                    <p>After each season, any new findings will be included on the website, so stay tuned to stay up-to-date on our work!</big></p></center>
+                </div>
+            </div>
+        </div>
+    </div>
+
                 <!-- Navigation-->
                 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
                     <div class="container px-5">
