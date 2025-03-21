@@ -1,216 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Map</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
-    <!-- Time Slider -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#myModal").modal('show');
-        });
-    </script>
-    <style>
-        #map {
-            position: relative;
-            height: 90vh;
-            width: 100%;
-            z-index: 1000;
-            margin-top: 90px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Map</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    #map {
+      position: relative;
+      height: 90vh;
+      width: 100%;
+      z-index: 1000;
+      margin-top: 90px;
+    }
+    
+    /* Center the modal */
+    .modal-dialog {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+  </style>
+
 </head>
 
 <body>
-
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title">Marco Gonzalez</h1>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <center><p><big>This is the map of all of the archaeological structures found thus far at Marco Gonzalez!
-                    </p>
-
-                    <p>Marco Gonzalez was almost destroyed and replaced with condomonium resorts, but became San Pedro's first official Archaeological Reserve on April 1, 2011, making it a protected area.</p>
-
-                    <p>As you go through the site, you can look at what artifacts were found at which structures during previous excavations.</p>
-
-                    <p>We work with several specialists (including ceramicists and lithics specialists) throughout the field season who can (and have) provided valuable information about where artifacts would have originated from. Where available, information about where the artifact came from will be included in the pop up.</p>
-    
-                    <p>After each season, any new findings will be included on the website, so stay tuned to stay up-to-date on our work!</big></p></center>
-                </div>
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-3">
+      <a class="navbar-brand" href="index.html">Walk Down Memory Lane</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+            <div class="dropdown-menu m-0">
+              <a href="The Project.html" class="dropdown-item">The Project</a>
+              <a href="The Creator.html" class="dropdown-item">The Creator</a>
             </div>
-        </div>
-    </div>
-
-                <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-            <div class="container px-3">
-                <a class="navbar-brand" href="index.html">Walk Down Memory Lane</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <div class="nav-item dropdown">
-                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
-                            <div class="dropdown-menu m-0">
-                             <a href="The Project.html" class="dropdown-item">The Project</a>
-                             <a href="The Creator.html" class="dropdown-item">The Creator</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <li class="nav-item"><a class="nav-link" href="What is AR.html">What is Augmented Reality?</a></li>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Main Street Romeo, MI.</a>
-                            <div class="dropdown-menu m-0">
-                            <a href="Downtown.html" class="dropdown-item">Downtown History</a>
-                            <a href="AR Experience.html" class="dropdown-item">AR Experience</a>
-                            <a href="Map.html" class="dropdown-item">Map</a>
-                            <a href="Locations.html" class="dropdown-item">Memory Lane Locations</a>
-                             <a href="Share Your Memories.html" class="dropdown-item">Share Your Memories</a>
-                            </div>
-                        </div>
-                        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Acknowledgements.html">Acknowledgements</a></li>
-                    </ul>
-                </div>
+          </div>
+          <div class="nav-item dropdown">
+            <li class="nav-item"><a class="nav-link" href="What is AR.html">What is Augmented Reality?</a></li>
+          </div>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Main Street Romeo, MI.</a>
+            <div class="dropdown-menu m-0">
+              <a href="Downtown.html" class="dropdown-item">Downtown History</a>
+              <a href="AR Experience.html" class="dropdown-item">AR Experience</a>
+              <a href="Map.html" class="dropdown-item">Map</a>
+              <a href="Locations.html" class="dropdown-item">Memory Lane Locations</a>
+              <a href="Share Your Memories.html" class="dropdown-item">Share Your Memories</a>
             </div>
-        </nav>
-    <div id="map"></div>
+          </div>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="Acknowledgements.html">Acknowledgements</a></li>
+        </ul>
+      </div>
     </div>
-</header>
+  </nav>
 
-   <script>
-       // Initialize map centered in the USA
-        var map = L.map('map').setView([42.80260603873673, -83.01341495806903], 17.4);
-        var baseLayer = L.tileLayer('https://api.maptiler.com/maps/bright-v2/{z}/{x}/{y}.png?key=9ZlnxkRt2oS8TwA1JdFu', {
-            attribution: '&copy; MapTiler &copy; OpenStreetMap contributors'
-        });
+  <div id="map"></div>
 
-        var iconOptions = {
-            iconUrl: "images/mappin.png", // Updated to use your custom icon
-            iconSize: [40, 40]
-        };
-        var customIcon = L.icon(iconOptions);
-        var markerOptions = { icon: customIcon };
-        
-        // Add the zoom control on the right side
-            L.control.zoom({
-             position: 'bottomright' // This will place the zoom controls on the top-right
-            }).addTo(map);
+  <script>
+    // Initialize map centered in the USA
+    var map = L.map('map').setView([42.80260603873673, -83.01341495806903], 17.4);
+    var baseLayer = L.tileLayer('https://api.maptiler.com/maps/bright-v2/{z}/{x}/{y}.png?key=9ZlnxkRt2oS8TwA1JdFu', {
+      attribution: '&copy; MapTiler &copy; OpenStreetMap contributors'
+    });
 
-        // Event locations with year NOT WORKING
+    var iconOptions = {
+      iconUrl: "images/mappin.png", // Updated to use your custom icon
+      iconSize: [40, 40]
+    };
+    var customIcon = L.icon(iconOptions);
+    var markerOptions = { icon: customIcon };
+
+    // Add the zoom control on the right side
+    L.control.zoom({
+      position: 'bottomright' // This will place the zoom controls on the top-right
+    }).addTo(map);
+
+    // Event locations with year NOT WORKING
 // locations with timestamps
 var markers = [
-        {
-        position: [42.80357871998362, -83.01369405974091],
-        popup: `
-        <b>Gray's Block</b><br>
-        <a href="https://www.google.com/maps/place/231+N+Main+St,+Romeo,+MI+48065/@42.8035552,-83.0136931,1238m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5974d43db:0x718e996fd77eb13b!8m2!3d42.8035552!4d-83.0136931!16s%2Fg%2F11csjw9_42?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <b>231 N. Main St., Romeo, MI., 48065</b>
-        </a><br>
-        <p>Built in 1869, the Gray's Block is is the only remaining Opera House in Michigan from this period. Learn about its history.</p>
-        <p><a href="Gray's Block.html">Learn More</a></p>
-        <img src="images/grays.jpg" style="width: 150px">
-        `,
-        }
-        ];
+{
+position: [42.80357871998362, -83.01369405974091],
+popup: `
+<b>Gray's Block</b><br>
+<a href="https://www.google.com/maps/place/231+N+Main+St,+Romeo,+MI+48065/@42.8035552,-83.0136931,1238m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5974d43db:0x718e996fd77eb13b!8m2!3d42.8035552!4d-83.0136931!16s%2Fg%2F11csjw9_42?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+<b>231 N. Main St., Romeo, MI., 48065</b>
+</a><br>
+<p>Built in 1869, the Gray's Block is is the only remaining Opera House in Michigan from this period. Learn about its history.</p>
+<p><a href="Gray's Block.html">Learn More</a></p>
+<img src="images/grays.jpg" style="width: 150px">
+`,
+}
+];
 
-        
-        markers.push({
-        position: [42.80356734368129, -83.01326765439258],
-        popup: `
-        <b>Main Street Looking South</b><br>
-        <a href="https://www.google.com/maps/place/Romeo-Washington+Area+Chamber+of+Commerce+(Greater)/@42.8035045,-83.0133398,39m/data=!3m1!1e3!4m6!3m5!1s0x8824e4b5bb2c36bb:0xd3d3436f4b95ea4f!8m2!3d42.8035061!4d-83.0131526!16s%2Fg%2F1vk6zvx0?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <b>228 N. Main St., Romeo, MI., 48065</b>
-        </a><br>
-        <p>See how much Main Street has changed by clicking the link below.</p>
-        <p><a href="Main Street Looking South.html">Learn More</a></p>
-        <img src="images/streetsouth.png" style="width: 150px">
-        `,
-        });
-        
-        markers.push({
-        position: [42.80274824454993, -83.01360877865822],
-        popup: `
-        <b>Citizens National Bank</b><br>
-        <a href="https://www.google.com/maps/place/201+N+Main+St,+Romeo,+MI+48065/@42.8027313,-83.0162845,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5ec766a99:0x7e144015a1e6fba5!8m2!3d42.8027274!4d-83.0137096!16s%2Fg%2F11c4hybdgh?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <b>201 N. Main St., Romeo, MI., 48065</b>
-        </a><br>
-        <p>From grocery store in the early 1900s to a community bank, to antique mall and now a coffee house, learn more about its diverse history.</p>
-        <p><a href="Citizens National Bank.html">Learn More</a></p>
-        <img src="images/citizensbank.jpg" style="width: 150px">
-        `,
-        });
-        
-        markers.push({
-        position: [42.80248089734905, -83.01363978997139],
-        popup: `
-        <b>Romeo Savings Bank</b><br>
-        <a href="https://www.google.com/maps/place/100+S+Main+St,+Romeo,+MI+48065/@42.8024464,-83.0163461,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5efab2b3b:0xf424a6690afd7b3a!8m2!3d42.8024425!4d-83.0137712!16s%2Fg%2F11bw4mttv_?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <b>100 S. Main St., Romeo, MI., 48065</b>
-        </a><br>
-        <p>Built in 1863, this bank drew interest from the Dodge Brothers. Learn more about its evolution in Romeo.</p>
-        <p><a href="Romeo Savings Bank.html">Learn More</a></p>
-        <img src="images/savingsbank.jpg" style="width: 150px">
-        `,
-        });
+markers.push({
+position: [42.80356734368129, -83.01326765439258],
+popup: `
+<b>Main Street Looking South</b><br>
+<a href="https://www.google.com/maps/place/Romeo-Washington+Area+Chamber+of+Commerce+(Greater)/@42.8035045,-83.0133398,39m/data=!3m1!1e3!4m6!3m5!1s0x8824e4b5bb2c36bb:0xd3d3436f4b95ea4f!8m2!3d42.8035061!4d-83.0131526!16s%2Fg%2F1vk6zvx0?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+<b>228 N. Main St., Romeo, MI., 48065</b>
+</a><br>
+<p>See how much Main Street has changed by clicking the link below.</p>
+<p><a href="Main Street Looking South.html">Learn More</a></p>
+<img src="images/streetsouth.png" style="width: 150px">
+`,
+});
+markers.push({
+position: [42.80274824454993, -83.01360877865822],
+popup: `
+<b>Citizens National Bank</b><br>
+<a href="https://www.google.com/maps/place/201+N+Main+St,+Romeo,+MI+48065/@42.8027313,-83.0162845,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5ec766a99:0x7e144015a1e6fba5!8m2!3d42.8027274!4d-83.0137096!16s%2Fg%2F11c4hybdgh?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+<b>201 N. Main St., Romeo, MI., 48065</b>
+</a><br>
+<p>From grocery store in the early 1900s to a community bank, to antique mall and now a coffee house, learn more about its diverse history.</p>
+<p><a href="Citizens National Bank.html">Learn More</a></p>
+<img src="images/citizensbank.jpg" style="width: 150px">
+`,
+});
+markers.push({
+position: [42.80248089734905, -83.01363978997139],
+popup: `
+<b>Romeo Savings Bank</b><br>
+<a href="https://www.google.com/maps/place/100+S+Main+St,+Romeo,+MI+48065/@42.8024464,-83.0163461,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5efab2b3b:0xf424a6690afd7b3a!8m2!3d42.8024425!4d-83.0137712!16s%2Fg%2F11bw4mttv_?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+<b>100 S. Main St., Romeo, MI., 48065</b>
+</a><br>
+<p>Built in 1863, this bank drew interest from the Dodge Brothers. Learn more about its evolution in Romeo.</p>
+<p><a href="Romeo Savings Bank.html">Learn More</a></p>
+<img src="images/savingsbank.jpg" style="width: 150px">
+`,
+});
 
-        markers.push({
-        position: [42.80149113381764, -83.01361653148244],
-        popup: `
-        <b>American Hotel</b><br>
-        <a href="https://www.google.com/maps/place/136+S+Main+St,+Romeo,+MI+48065/@42.8013602,-83.0162593,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b60ea543ab:0xb94f3e86eec0ce8c!8m2!3d42.8013563!4d-83.0136844!16s%2Fg%2F11bw41dwlm?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <b>136 S. Main St., Romeo, MI., 48065</b>
-        </a><br>
-        <p>Did you know there was a hotel on Main Street? Learn more about this location built in the early 1860s.</p>
-        <p><a href="American Hotel.html">Learn More</a></p>
-        <img src="images/hotel.jpg" style="width: 150px">
-        `,
-        });
+markers.push({
+position: [42.80149113381764, -83.01361653148244],
+popup: `
+<b>American Hotel</b><br>
+<a href="https://www.google.com/maps/place/136+S+Main+St,+Romeo,+MI+48065/@42.8013602,-83.0162593,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b60ea543ab:0xb94f3e86eec0ce8c!8m2!3d42.8013563!4d-83.0136844!16s%2Fg%2F11bw41dwlm?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+<b>136 S. Main St., Romeo, MI., 48065</b>
+</a><br>
+<p>Did you know there was a hotel on Main Street? Learn more about this location built in the early 1860s.</p>
+<p><a href="American Hotel.html">Learn More</a></p>
+<img src="images/hotel.jpg" style="width: 150px">
+`,
+});
 
-        markers.push({
-        position: [42.801627, -83.013286],
-        popup: `
-        <b>Main Street Looking North</b><br>
-        <a href="https://www.google.com/maps/place/131+S+Main+St,+Romeo,+MI+48065/@42.8016975,-83.0158009,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5d884dab7:0xbd6ce8ccd76d00b9!8m2!3d42.8016936!4d-83.013226!16s%2Fg%2F11c5ct9_vs?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-        <b>131 S. Main St., Romeo, MI., 48065</b>
-        </a><br>
-        <p>See how much Main Street has changed by clicking the link below.</p>
-        <p><a href="Main Street Looking North.html">Learn More</a></p>        
-        <img src="images/streetnorth.jpg" style="width: 150px">
-        `,
-        });
+markers.push({
+position: [42.801627, -83.013286],
+popup: `
+<b>Main Street Looking North</b><br>
+<a href="https://www.google.com/maps/place/131+S+Main+St,+Romeo,+MI+48065/@42.8016975,-83.0158009,619m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8824e4b5d884dab7:0xbd6ce8ccd76d00b9!8m2!3d42.8016936!4d-83.013226!16s%2Fg%2F11c5ct9_vs?entry=ttu&g_ep=EgoyMDI1MDMwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+<b>131 S. Main St., Romeo, MI., 48065</b>
+</a><br>
+<p>See how much Main Street has changed by clicking the link below.</p>
+<p><a href="Main Street Looking North.html">Learn More</a></p>
+<img src="images/streetnorth.jpg" style="width: 150px">
+`,
+});
 
-        var eventsLayer = L.layerGroup();
-        markers.forEach(function(event) {
-            var marker = L.marker(event.position, markerOptions).bindPopup(event.popup);
-            marker.options.year = event.year; // Add custom year property
-            eventsLayer.addLayer(marker);
-        });
+var eventsLayer = L.layerGroup();
+markers.forEach(function(event) {
+var marker = L.marker(event.position, markerOptions).bindPopup(event.popup);
+marker.options.year = event.year; // Add custom year property
+eventsLayer.addLayer(marker);
+});
 
-        baseLayer.addTo(map);
-        eventsLayer.addTo(map);
-    </script>
-        <!-- Footer-->
-        <footer class="py-4 bg-black">
-            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Walk Down Memory Lane, 2025</p></div>
-        </footer>
+baseLayer.addTo(map);
+eventsLayer.addTo(map);
+</script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+  <!-- Footer-->
+  <footer class="py-4 bg-black">
+    <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Walk Down Memory Lane, 2025</p></div>
+  </footer>
 
+  <!-- Bootstrap 5 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Welcome to Mapping CKDu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          This is an important message or introduction about CKDu and the purpose of this website.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript to trigger the modal -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+      myModal.show(); // Show the modal when the page loads
+    });
+  </script>
+</body>
 </html>
