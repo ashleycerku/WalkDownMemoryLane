@@ -78,8 +78,47 @@
             </div>
         </section>        
        
-        <!--JuxtaposeJS-->
-        <iframe style="width: 700px; height: 900px; margin-bottom: 0;" frameborder="0" class="juxtapose" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=801dd548-0363-11f0-9397-d93975fe8866"></iframe>
+        <style>
+            .juxtapose-container {
+                display: flex;
+                align-items: center; /* Vertically center the iframe and text */
+                justify-content: space-between; /* Space between iframe and text */
+                gap: 20px; /* Space between iframe and text */
+                padding-left: 200px;
+                padding-right: 200px;
+            }
+            .juxtapose-text {
+                max-width: 500px; /* Limit the width of the text */
+                font-size: 16px; /* Adjust font size */
+                line-height: 1.6;
+            }
+            .juxtapose-iframe {
+                width: 500px;
+                height: 700px;
+                border: none;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <!-- Juxtapose Section with Text Next to It -->
+    <section>
+        <div class="juxtapose-container">
+            <!-- Text Section -->
+            <div class="juxtapose-text">
+                <h3>Historical Comparison of Gray's Block</h3>
+                <p>
+                    The juxtaposition above shows the evolution of Gray's Block in Romeo, Michigan. 
+                    On the left, we have a historical image dating back to the late 1800s, and on the right, 
+                    the current state of the building as it stands today. This comparison highlights the changes 
+                    over the years and serves as a reminder of the area's rich history.
+                </p>
+            </div>
+            
+            <!-- JuxtaposeJS Iframe -->
+            <iframe class="juxtapose-iframe" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=801dd548-0363-11f0-9397-d93975fe8866"></iframe>
+        </div>
+    </section>
 
     <style>
         /* Image gallery styles */
@@ -123,7 +162,7 @@
 
     <!-- Gallery Section -->
     <div class="container my-5">
-        <h2 class="text-left font-size:20px mb-4">More historical photographs</h2>
+        <h3 class="text-left mb-4">More historical photographs</h3>
         <div class="gallery">
             <!-- Image 1 -->
             <div class="gallery-item">
@@ -158,6 +197,69 @@
             </div>
         </div>
     </div>
+
+    <style>
+        /* Additional styling for testimonials */
+        .testimonial-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .testimonial-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .testimonial-role {
+            color: #888;
+            font-size: 1rem;
+        }
+        .testimonial-text {
+            font-style: italic;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Testimonials Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Shared Stories</h2>
+        <div class="row">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/80" alt="Client 1" class="testimonial-image">
+                    <p class="testimonial-text">"This service is absolutely fantastic! I highly recommend it to anyone looking for top-notch quality and customer service."</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/80" alt="Client 2" class="testimonial-image">
+                    <p class="testimonial-text">"The team was incredibly helpful and responsive. They exceeded our expectations, and we are thrilled with the results!"</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <img src="https://via.placeholder.com/80" alt="Client 3" class="testimonial-image">
+                    <p class="testimonial-text">"I was impressed by the professionalism and attention to detail. They really listened to our needs and delivered perfectly."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.0/dist/umd/popper.min.js"></script>
