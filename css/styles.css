@@ -161,7 +161,8 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: normal;
 }
 
 p {
@@ -7478,6 +7479,7 @@ textarea.form-control-lg {
 .py-2 {
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
+  background: white
 }
 
 .py-3 {
@@ -11147,12 +11149,13 @@ background-size: cover;
 }
 
 body {
-    background: linear-gradient(to right, #101c81, #2a6ba3);
+    background: white;
     min-height: 100vh;
 }
+/* Heading Styles */
 .heading {
   text-align: center;
-  color: #454343;
+  color: black;
   font-size: 30px;
   font-weight: 700;
   position: relative;
@@ -11160,36 +11163,49 @@ body {
   text-transform: uppercase;
   z-index: 999;
 }
-.white-heading{
-  color: #ffffff;
+
+/* White Heading Variant */
+.white-heading {
+  color: white;
 }
+
+/* After Pseudo-element for Heading Line */
 .heading:after {
   content: ' ';
   position: absolute;
-  top: 100%;
+  top: 100%; /* Ensure it appears directly below the heading */
   left: 50%;
-  height: 40px;
-  width: 180px;
+  height: 40px; /* Adjust the height of the image */
+  width: 180px; /* Width of the image */
   border-radius: 4px;
-  transform: translateX(-50%);
-  background: url(img/heading-line.png);
+  transform: translateX(-50%); /* Center the image horizontally */
+  background: url('images/headingline.png');
   background-repeat: no-repeat;
   background-position: center;
-}
-.white-heading:after {
-  background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: contain; /* Ensures the image fits within the given dimensions */
+  z-index: -1; /* Ensure it appears behind text, if necessary */
 }
 
+/* White Heading Variant After Pseudo-element */
+.white-heading:after {
+  background: url('images/headingline.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* Make sure the image fits within the space */
+}
+
+/* Heading Span Text Styling */
 .heading span {
   font-size: 18px;
   display: block;
   font-weight: 500;
 }
+
+/* White Heading Span Text Styling */
 .white-heading span {
-  color: #ffffff;
+  color: white;
 }
+
 /*-----Testimonial-------*/
 
 /* After pseudo-element (for background) */
@@ -11262,7 +11278,7 @@ body {
   padding: 20px;
   position: relative;
   text-align: center;
-  background-color: #fff; /* Optional: Add background to slides for better contrast */
+  background-color: white; /* Optional: Add background to slides for better contrast */
 }
 
 /* Testimonial Slide Image (round) */
