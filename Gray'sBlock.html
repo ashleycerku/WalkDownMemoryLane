@@ -94,6 +94,7 @@
                 gap: 20px; /* Space between iframe and text */
                 padding-left: 200px;
                 padding-right: 200px;
+                padding-bottom: 0px;
             }
             .juxtapose-text {
                 max-width: 500px; /* Limit the width of the text */
@@ -105,6 +106,7 @@
                 width: 500px;
                 height: 700px;
                 border: none;
+                padding-bottom: 0px;
             }
         </style>
     </head>
@@ -125,10 +127,28 @@
             </div>
             
             <!-- JuxtaposeJS Iframe -->
-            <iframe height="400px" class="juxtapose-iframe" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=6285b452-0e93-11f0-9397-d93975fe8866"></iframe>
+            <iframe style="margin-bottom: 0px;" height="400px" class="juxtapose-iframe" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=6285b452-0e93-11f0-9397-d93975fe8866"></iframe>
         </div>
     </section>
     
+    <script>
+        /**
+         * Your width calculation will vary according to the aspect ratio
+         * of your Juxtapose images.
+         */
+        var calculateHeight = function(width) {
+            return width * (360 / 640);
+        }
+
+        var setJuxtaposeHeight = function() {
+            var frame = document.getElementsByClassName("juxtapose")[0];
+            frame.setAttribute('height', calculateHeight(frame.offsetWidth));
+        };
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            setJuxtaposeHeight();
+        });
+    </script>
 
     <style>
         /* Image gallery styles */
@@ -345,7 +365,7 @@
                                 <h5 class="fw-bolder">Main Street Looking South</h5>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Learn More</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="Main Street Looking South.html">Learn More</a></div>
                             </div>
                         </div>
                     </div>
@@ -357,7 +377,7 @@
                                 <h5 class="fw-bolder">The American Hotel</h5>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Learn More</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="American Hotel.html">Learn More</a></div>
                             </div>
                         </div>
                     </div>
@@ -369,7 +389,7 @@
                                 <h5 class="fw-bolder">Citizens National Bank</h5>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Learn More</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="Citizens National Bank.html">Learn More</a></div>
                             </div>
                         </div>
                     </div>
@@ -381,7 +401,7 @@
                                 <h5 class="fw-bolder">Romeo Savings Bank</h5>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Learn More</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="Romeo Savings Bank.html">Learn More</a></div>
                             </div>
                         </div>
                     </div>
