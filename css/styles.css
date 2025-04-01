@@ -11284,3 +11284,25 @@ body {
 /* Testimonial Slide Image (round) */
 .testimonial4_slide img {
   width: 136px;
+
+
+  .juxtapose-container {
+    width: 100%;  /* Ensure the container takes up the full width of its parent */
+    display: flex;
+    justify-content: center;  /* Centers the content horizontally */
+    align-items: center;  /* Optionally center vertically if you want */
+    flex-direction: column;  /* Stack the text and iframe vertically */
+    text-align: center;  /* Center text inside the text section */
+    padding: 20px;
+}
+
+.juxtapose-text {
+    margin-bottom: 20px;  /* Space between the text and the iframe */
+}
+
+.juxtapose-iframe {
+    width: 100%;
+    max-width: 800px;  /* Optional: Set a max width for the iframe */
+    height: 400px;  /* Set the height of the iframe */
+    border: none;
+}
