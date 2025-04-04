@@ -81,7 +81,7 @@
                         <div class="fs-5 mb-5">
                         </div>
                         <p class="lead">Gray’s Block (1869-Present) was designed by local architect Oscar S. Buel and financed by brothers Hugh, Noah, and James Gray. Built in 1869, it started as three storefronts and later became Gray’s Opera House with a ballroom and auditorium. In the July 1869 issue of <i>The Romeo Observer</i>, it noted that the Gray’s Block building was “the most costly and elegant building in Macomb County,” especially with features like gas lighting fixtures and plate glass imported from France. Its design and purpose is comparable to the Ford’s Theater in Washington, D.C. and is the only remaining Opera House in Michigan from this period.</p>
-                        <p class="lead">In January 1876, a fire damaged Gray’s Block and then a second fire a month later almost destroyed the entire building. The building was eventually rebuilt, but sat vacant for some time. The Gray brothers later sold it in 1885 to John Smith, a wealthy landowner and banker. From 1876 to 1941, the Gray’s Block survived a total of five fires. It was dedicated as the Romeo Masonic Temple on January 23, 1923 and continues to serve as a meeting house.</p>
+                        <p class="lead" style="padding-bottom: 50px;">In January 1876, a fire damaged Gray’s Block and then a second fire a month later almost destroyed the entire building. The building was eventually rebuilt, but sat vacant for some time. The Gray brothers later sold it in 1885 to John Smith, a wealthy landowner and banker. From 1876 to 1941, the Gray’s Block survived a total of five fires. It was dedicated as the Romeo Masonic Temple on January 23, 1923 and continues to serve as a meeting house.</p>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,7 @@
             }
             .juxtapose-iframe {
                 width: 500px;
-                height: 700px;
+                height: 400px;
                 border: none;
                 padding-bottom: 0px;
             }
@@ -131,25 +131,6 @@
             <iframe style="margin-bottom: 0px;" height="400px" class="juxtapose-iframe" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=6285b452-0e93-11f0-9397-d93975fe8866"></iframe>
         </div>
     </section>
-    
-    <script>
-        /**
-         * Your width calculation will vary according to the aspect ratio
-         * of your Juxtapose images.
-         */
-        var calculateHeight = function(width) {
-            return width * (360 / 640);
-        }
-
-        var setJuxtaposeHeight = function() {
-            var frame = document.getElementsByClassName("juxtapose")[0];
-            frame.setAttribute('height', calculateHeight(frame.offsetWidth));
-        };
-
-        document.addEventListener("DOMContentLoaded", function(event) {
-            setJuxtaposeHeight();
-        });
-    </script>
 
     <style>
         /* Image gallery styles */
