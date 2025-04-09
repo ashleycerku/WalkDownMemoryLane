@@ -1,44 +1,39 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Page structure from the Twitter Bootstrap starter template: https://getbootstrap.com/docs/4.3/getting-started/introduction/#starter-template -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<html>
+<head>
+  <title>Empty HTML for Leaflet Workshop</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 
-    <title>Juxtapose examples: Whitespace fix with Javascript</title>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
-  </head>
-  <body>
-    <div class="container">
-        <h1>Juxtapose Examples</h1>
-        <h2>Whitespace fix with Javascript</h2>
-        <div class="row">
-            <div class="col">
-                <iframe frameborder="0" class="juxtapose" width="100%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=1ac1cfdc-3458-11e9-9dba-0edaf8f81e27"></iframe>
-                <p>Here is some content directly below the Juxtapose iframe</p>
-            </div> <!-- .col -->
-        </div> <!-- .row -->
-    </div>
+  <style>
+#mysupermap{ width: 900px; height: 500px; }
 
-    <script>
-        /**
-         * Your width calculation will vary according to the aspect ratio
-         * of your Juxtapose images.
-         */
-        var calculateHeight = function(width) {
-            return width * (360 / 640);
-        }
 
-        var setJuxtaposeHeight = function() {
-            var frame = document.getElementsByClassName("juxtapose")[0];
-            frame.setAttribute('height', calculateHeight(frame.offsetWidth));
-        };
+  </style>
 
-        document.addEventListener("DOMContentLoaded", function(event) {
-            setJuxtaposeHeight();
-        });
-    </script>
+</head>
+<body>
+<div id="mysupermap"></div>
 
-  </body>
+
+  <script>
+var map = L.map('mysupermap').setView([51.4829377,-0.2420245], 12);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+
+maxZoom: 18,
+
+attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+
+id: 'mapbox/streets-v11'
+
+}).addTo(map);
+
+var marker = L.marker([51.494417, -0.223022]).addTo(map);
+
+marker.bindPopup("<b><center>Hammersmith</center></b>I'm an awesome neighborhood.").openPopup();
+
+  </script>
+
+</body>
 </html>
